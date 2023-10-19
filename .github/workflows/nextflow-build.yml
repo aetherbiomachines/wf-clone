@@ -7,4 +7,5 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - uses: nf-core/setup-nextflow@v1
-      - run: nextflow run epi2me-labs/wf-clone-validation --help
+#      - run: nextflow run epi2me-labs/wf-clone-validation --help
+      - run:   nextflow run epi2me-labs/wf-clone-validation --fastq 'wf-clone-validation-demo/test' --primers 'wf-clone-validation-demo/primers.tsv'
