@@ -1,0 +1,10 @@
+name: nextflow build
+on:   
+  workflow_dispatch: 
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: nf-core/setup-nextflow@v1
+      - run: nextflow run epi2me-labs/wf-clone-validation --help
