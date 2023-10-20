@@ -6,7 +6,7 @@ jobs:
     runs-on: wf-clone
     steps:
 #      - uses: actions/checkout@v3
-      - uses: nf-core/setup-nextflow@v1
+#      - uses: nf-core/setup-nextflow@v1
       - run: |
          nextflow run epi2me-labs/wf-clone-validation --help
          nextflow run epi2me-labs/wf-clone-validation --primers '/wf-clone-validation/data/primers.tsv' --fastq '/wf-clone-validation/test_data/test/barcode01'
