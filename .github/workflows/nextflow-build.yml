@@ -7,7 +7,12 @@ jobs:
     steps:
         - name: RUN NF
           run:
+            ls -lat
             nextflow run epi2me-labs/wf-clone-validation --primers '/wf-clone-validation/data/primers.tsv' --fastq '/wf-clone-validation/test_data/test/barcode01'
           working-directory: /opt/nextflow
+
+        - name: RUN LS
+          run:
+            ls -lat
 #      - uses: actions/checkout@v3
 #      - uses: nf-core/setup-nextflow@v1
