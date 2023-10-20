@@ -5,7 +5,7 @@ jobs:
   build:
     runs-on: wf-clone
     steps:
-      - uses: actions/checkout@v3
+#      - uses: actions/checkout@v3
       - uses: nf-core/setup-nextflow@v1
       - run: |
          nextflow run epi2me-labs/wf-clone-validation --help
