@@ -5,8 +5,9 @@ jobs:
   build:
     runs-on: self-hosted
     steps:
+        - name: RUN NF
 #      - uses: actions/checkout@v3
 #      - uses: nf-core/setup-nextflow@v1
-      - run:
-         nextflow run epi2me-labs/wf-clone-validation --primers '/wf-clone-validation/data/primers.tsv' --fastq '/wf-clone-validation/test_data/test/barcode01'
-      - working-directory: /
+        - run:
+           nextflow run epi2me-labs/wf-clone-validation --primers '/wf-clone-validation/data/primers.tsv' --fastq '/wf-clone-validation/test_data/test/barcode01'
+        - working-directory: /
