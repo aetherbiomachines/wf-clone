@@ -14,9 +14,9 @@ jobs:
           run: |
             ls -lat
             echo HEY LOOK AT ME!!
-            echo ${{ inputs.ENVIRONMENT}}
+            echo ${{ inputs.BARCODE}}
             echo we done here.
-#            nextflow run epi2me-labs/wf-clone-validation --primers '/opt/nextflow/wf-clone-validation/data/primers.tsv' --fastq '/opt/nextflow/wf-clone-validation/test_data/test/${{ inputs.ENVIRONMENT}}' --out_dir "output/output-$(date '+%m%d-%H%M')"
+#            nextflow run epi2me-labs/wf-clone-validation --primers '/opt/nextflow/wf-clone-validation/data/primers.tsv' --fastq '/opt/nextflow/wf-clone-validation/test_data/test/${{ inputs.BARCODE}}' --out_dir "output/output-$(date '+%m%d-%H%M')"
           working-directory: /opt/nextflow
 
         - name: RUN LS
