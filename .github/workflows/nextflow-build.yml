@@ -13,7 +13,7 @@ jobs:
         - name: RUN NF
           run: |
             echo ${{ inputs.BARCODE}}
-            nextflow run epi2me-labs/wf-clone-validation --primers 'primers.tsv' --fastq 'input/${{ inputs.BARCODE}}' --out_dir "output/output-${{ inputs.BARCODE}}"
+            nextflow run epi2me-labs/wf-clone-validation --fastq 'input/${{ inputs.BARCODE}}' --out_dir "output/output-${{ inputs.BARCODE}}"
           working-directory: /opt/nextflow
 # timestamped output output/output-$(date '+%m%d-%H%M')
         - name: RUN LS
@@ -21,3 +21,4 @@ jobs:
             ls -lat
 #      - uses: actions/checkout@v3
 #      - uses: nf-core/setup-nextflow@v1
+#            nextflow run epi2me-labs/wf-clone-validation --primers 'primers.tsv' --fastq 'input/${{ inputs.BARCODE}}' --out_dir "output/output-${{ inputs.BARCODE}}"
