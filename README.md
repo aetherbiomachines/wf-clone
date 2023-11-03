@@ -1,18 +1,31 @@
-# Clone validation workflow
+## Some DASH Additions during execution and development:
 
-*Some DASH Additions during execution and development:
+* soft links are not appreciated by the input flag (--fastq) cannot detect fastq.gz's etc..
+* attempting to pull data using s3+fuse appears to be too slow, rsync data (fastq.gz's) locally or possibly use FSX in production
+* using aws cli cp command to pull down locally, faster than rsync :this:
+* min vCPU is 4 (t2.medium has capacity 2) - set machine size to at least that!
+* do not run as root? no error but only appears to run using sudo under less priv'd account (edited) 
+* (no mounting an S3 bucket in local FS for input's)
 
--soft links are not appreciated by the input flag (--fastq) cannot detect fastq.gz's etc..
--attempting to pull data using s3+fuse appears to be too slow, rsync data (fastq.gz's) locally or possibly use FSX in production
--using aws cli cp command to pull down locally, faster than rsync :this:
--min vCPU is 4 (t2.medium has capacity 2) - set machine size to at least that!
--do not run as root? no error but only appears to run using sudo under less priv'd account (edited) 
-(no mounting an S3 bucket in local FS for input's)
+* working execution:
+```sudo nextflow run epi2me-labs/wf-clone-validation --fastq /data/pass --out_dir output/output-poc2DASH```
+
+* where the input (/data/pass) was just copied over locally from S3 to run
+```
+barcode01  barcode08  barcode15  barcode22  barcode29  barcode36  barcode43  barcode50  barcode57  barcode64  barcode71  barcode78  barcode85  barcode92
+barcode02  barcode09  barcode16  barcode23  barcode30  barcode37  barcode44  barcode51  barcode58  barcode65  barcode72  barcode79  barcode86  barcode93
+barcode03  barcode10  barcode17  barcode24  barcode31  barcode38  barcode45  barcode52  barcode59  barcode66  barcode73  barcode80  barcode87  barcode94
+barcode04  barcode11  barcode18  barcode25  barcode32  barcode39  barcode46  barcode53  barcode60  barcode67  barcode74  barcode81  barcode88  barcode95
+barcode05  barcode12  barcode19  barcode26  barcode33  barcode40  barcode47  barcode54  barcode61  barcode68  barcode75  barcode82  barcode89  barcode96
+barcode06  barcode13  barcode20  barcode27  barcode34  barcode41  barcode48  barcode55  barcode62  barcode69  barcode76  barcode83  barcode90  unclassified
+barcode07  barcode14  barcode21  barcode28  barcode35  barcode42  barcode49  barcode56  barcode63  barcode70  barcode77  barcode84  barcode91
+```
+
 
 This repository contains a [nextflow](https://www.nextflow.io/) workflow
 that can be used to de novo assemble plasmid sequences from Oxford Nanopore data. The workflow allows users to verify complete artificial constructs.
 
-
+# Clone validation workflow
 
 ## Introduction
 
