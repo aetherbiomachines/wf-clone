@@ -1,5 +1,14 @@
 # Clone validation workflow
 
+*Some DASH Additions during execution and development:
+
+-soft links are not appreciated by the input flag (--fastq) cannot detect fastq.gz's etc..
+-attempting to pull data using s3+fuse appears to be too slow, rsync data (fastq.gz's) locally or possibly use FSX in production
+-using aws cli cp command to pull down locally, faster than rsync :this:
+-min vCPU is 4 (t2.medium has capacity 2) - set machine size to at least that!
+-do not run as root? no error but only appears to run using sudo under less priv'd account (edited) 
+(no mounting an S3 bucket in local FS for input's)
+
 This repository contains a [nextflow](https://www.nextflow.io/) workflow
 that can be used to de novo assemble plasmid sequences from Oxford Nanopore data. The workflow allows users to verify complete artificial constructs.
 
