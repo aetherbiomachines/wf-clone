@@ -20,7 +20,8 @@ barcode05  barcode12  barcode19  barcode26  barcode33  barcode40  barcode47  bar
 barcode06  barcode13  barcode20  barcode27  barcode34  barcode41  barcode48  barcode55  barcode62  barcode69  barcode76  barcode83  barcode90  unclassified
 barcode07  barcode14  barcode21  barcode28  barcode35  barcode42  barcode49  barcode56  barcode63  barcode70  barcode77  barcode84  barcode91
 ```
-
+* output available at https://aether-bio-data.s3.amazonaws.com/output/output-poc2DASH/wf-clone-validation-report.html
+* workflow needs updating
 
 This repository contains a [nextflow](https://www.nextflow.io/) workflow
 that can be used to de novo assemble plasmid sequences from Oxford Nanopore data. The workflow allows users to verify complete artificial constructs.
